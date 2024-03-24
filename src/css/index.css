@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* CardSubPage -- Start */
+
+.fcbs-7{
+  font-size: 14px;
+  font-weight: 600;
+}
+.overflow-sty{
+  overflow: auto;
+}
+.overflow-sty::-webkit-scrollbar{
+    display: none;
+}
+
+@media (min-width: 768px){
+  .OpenCardImg_H_Height{
+    height: 300px;
+  }
+  .OpenCardImg_C_Height{
+    height: 300px;
+  }
+  .custom-width{
+    width: 30.333333% !important;
+  }
+}
+@media (min-width: 1024px){
+  .OpenCardImg_H_Height{
+    height: 350px;
+  }
+  .OpenCardImg_C_Height{
+    height: 175px;
+  }
+  .w-60{
+    width: 60%;
+  }
+  .custom-width{
+    width: 30.333333% !important;
+  }
+}
+/* CardSubPage -- End */

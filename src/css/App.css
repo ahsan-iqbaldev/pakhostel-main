@@ -1,0 +1,439 @@
+
+:root {
+    --primary-- : #ff385c;
+    --secondary-- : #00000036;
+    --half-secondary-- : #6c757d;
+    --light-grey--: #ddd;
+    --black--: #000;
+    --box-shadow--: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* NavBar - Start */
+.menuitem {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+  }
+  .menuitem:after {
+    content: "";
+    display: block;
+    height: 2px;
+    margin-top: 3px;
+    width: 0;
+    background: transparent;
+    transition: width 0.5s ease, background-color 0.5s ease;
+  }
+  .menuitem.active:after {
+    width: 100%;
+    background: var(--black--);
+    color: #222222;
+    opacity: 1;
+  }
+  .menuitem.active:hover {
+    opacity: 1;
+  }
+  .menuitem:hover:after {
+    width: 100%;
+    background: var(--black--);
+    opacity: 0.7;
+  }
+  .menuitem:hover {
+    opacity: 0.7;
+  }
+/* NavBar - End */
+
+.color-primary{
+    color: var(--primary--);
+}
+.bg-custom-primary{
+    background: var(--primary--);
+}
+.custom-font-icon{
+    font-size: 35px;
+}
+.fcw-normal{
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 0px !important;
+}
+.fcw-medium{
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 0px !important;
+}
+.custom-main-border{
+    border: 1px solid var(--light-grey--);
+    box-shadow: var(--box-shadow--);
+}
+.custom-profile-border{
+    border: 1px solid var(--light-grey--);
+}
+.custom-profile-border:focus,
+.custom-profile-border:active,
+.custom-profile-border:hover{
+    box-shadow: var(--box-shadow--);
+}
+
+a:active, a:focus, a:hover {
+    box-shadow: none !important;
+}
+.custom-btn-border{
+    border-radius: 1px;
+    border-left: 1.5px solid var(--light-grey--) !important;
+    border-right:  1.5px solid var(--light-grey--) !important;
+    border-top: 0 solid var(--light-grey--) !important;
+    border-bottom: 0 solid var(--light-grey--) !important;
+}
+.rounded-custom-pill{
+    border-radius: 50%;
+}
+.bg-light-sec{
+    background-color: var(--light-grey--);
+}
+.bg-navbar-transparent{
+    background-color: transparent;
+}
+.bg-navbar-transparent:hover,
+.bg-navbar-transparent:active,
+.bg-navbar-transparent:focus{
+    background-color: var(--light-grey--);
+}
+.fsw-400{
+    font-weight: 400;
+    font-size: 14px;
+}
+.fsw-600{
+    font-weight: bold;
+    font-size: 14px;
+}
+.custom-img-brd{
+    border-radius: 15px;
+    border: 1px solid #cdcdcd;
+}
+.custom-img-brd:hover,
+.custom-img-brd:active,
+.custom-img-brd:focus{
+    border-color: var(--half-secondary--);
+}
+a{
+    text-decoration: none !important;
+}
+.main-submenu{
+    background-color: var(--light-grey--);
+}
+.nav-tabs .nav-link:hover {
+    box-shadow: var(--box-shadow--);
+    border: 0 !important;
+    background: #cfcfcfdd;
+    border-radius: 50rem;
+}
+.nav-tabs .nav-link.active {
+    border-radius: 50rem;
+    box-shadow: 1px 1px 10px #b3b3b3;
+}
+.nav-tabs .nav-link.active:hover {
+    background: #fff;
+}
+.w-15{
+    width: 15%;
+}
+.w-30{
+    width: 30%;
+}
+.w-35{
+    width: 35%;
+}
+
+/* React-Date-Range--Styling - Start */
+.rdrDefinedRangesWrapper{
+    display: none;
+}
+.rdrDateDisplayWrapper{
+    display: none;
+}
+/* React-Date-Range--Styling -End */
+
+.transition-itr {
+    /* height: 50px;  */
+    transition: all 0.8s ease-in-out; 
+  }
+  
+  .transition-itr.show {
+    /* height: 100px; */
+    transition: all 0.8s ease-in-out; 
+  }
+  .card {
+    border-radius: 20px;
+  }
+
+  .custom-icon{
+    width: 2em !important;
+    height: 2em !important;
+    color: var(--half-secondary--);
+    cursor: pointer;
+  }
+  .disabled{
+    color: #e3e3e3 !important;
+  }
+  .cst-brd:active,
+  .cst-brd:focus,
+  .cst-brd:hover
+  {
+    border: 1px solid #93979b !important;
+  }
+  .btn:active:focus,
+  .btn:focus {
+    box-shadow: none;
+  }
+  .form-control-sm {
+     min-height: 0px !important;
+  }
+  .form-control:focus {
+    box-shadow: none;
+}
+.custom-w-h{
+    width: 20px;
+    height: 20px;
+}
+.custom-img-icon{
+    width: 80%;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--light-grey--);
+}
+.custom-SubTab{
+    cursor: pointer;
+}
+.custom-SubTab:hover{
+    background-color: #f0f0f0;
+}
+
+/* Home Page CSS -- Start*/
+
+.fcs-15{
+    font-size: 15px;
+}
+.fcs-600{
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Home Page CSS -- End*/
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+.swiper-button-prev:after, 
+.swiper-button-next:after {
+  background-color: white;
+  border-radius: 100%;
+  color: var(--black--);
+  font-size: 10px !important;
+  padding: 8px 10px;
+}
+.swiper-button-prev, 
+.swiper-button-next {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets 
+.swiper-pagination-bullet, 
+.swiper-pagination-horizontal.swiper-pagination-bullets 
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+}
+
+/* slider -1 End */
+
+.custom-bg{
+  position: relative;
+  background-color: rgb(118 118 118 / 50%) !important;
+  width: 100%;
+  height: -webkit-fill-available;
+  left: 0;
+}
+
+.custom-bg-Home{
+  position: relative;
+  /* z-index: -1; */
+}
+
+/* Home Styling -- Start */
+
+.fcw-600{
+  font-weight: 600;
+  font-size: 14px;
+}
+.custom-pointer{
+  cursor: pointer;
+  border: none;
+}
+.nav-tabs .nav-link.popular-Active{
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  color: var(--black--);
+  border-bottom: 1.5px solid var(--black--) !important;
+}
+.nav-tabs .nav-link.popular-Active:hover,
+.nav-tabs .nav-link.popular-Active:active,
+.nav-tabs .nav-link.popular-Active:focus
+{
+  border-bottom: 1.5px solid var(--black--) !important;
+}
+.fcs-7{
+  font-size: 14px;
+}
+.f-sb-style:hover,
+.f-sb-style:active,
+.f-sb-style:focus
+{
+  border-bottom: 1.5px solid #515151;
+}
+.f-sbt-style{
+  border-bottom: 1.5px solid #515151;
+}
+.fcw-600{
+  font-size: 14px;
+  font-weight: 600;
+}
+/* Mobile Navbar -- Start */
+.custom-MobileNav-styling{
+  position: absolute;
+  left: 0;
+  width: 15% !important;
+  top: 15px;
+
+}
+.nav-tabs .nav-link.Mobile.popular-Active{
+  color: var(--black--) !important;
+}
+.brd-radius{
+  border-radius: 15px;
+}
+.mobile-navbar-sticky{
+  position: sticky;
+  top: 0;
+  box-shadow: var(--box-shadow--);
+  z-index: 20;
+}
+.MobileDate-wrapping .rdrMonths {
+  display: flex !important;
+}
+.fcw-500{
+  font-size: 13px;
+  font-weight: 600;
+}
+.mobile-navbar-bottom{
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+  z-index: 20;
+}
+.mobile-bottom-rounded{
+  padding: 10px 20px 10px 10px;
+  border-radius: 6px;
+}
+/* Mobile Navbar -- End */
+
+/* Swiper Slider */
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  display: none;
+}
+
+/* Home Styling -- End */
+
+  @media (min-width: 768px){
+        .custom-width-100{
+            width: 100% ;
+        }
+        .custom-tab1{
+          position: absolute;
+          width: 50%;
+          top: 127px;
+          left: 1%;
+          z-index: 2;
+          }
+          .custom-subTab1{
+            position: absolute;
+            top: 127px;
+            left: 1%;
+            width: 45%;
+            z-index: 2;
+          }
+          .custom-tab2{
+            position: absolute;
+            top: 127px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+          }
+          .custom-tab4{
+            position: absolute;
+            top: 127px;
+            right: 1%;
+            width: 50%;
+            z-index: 2;
+          }
+  }
+  @media (min-width: 1024px){
+    .custom-width-100{
+        width: 75%;
+    }
+    .custom-tab1{
+      position: absolute;
+      width: 38%;
+      top: 127px;
+      left: 13%;
+      z-index: 2;
+      }
+      .custom-subTab1{
+        position: absolute;
+        top: 127px;
+        left: 13%;
+        width: 30%;
+        z-index: 2;
+      }
+      .custom-tab2{
+        position: absolute;
+        top: 127px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+      .custom-tab4{
+        position: absolute;
+        top: 127px;
+        right: 13%;
+        width: 32%;
+        z-index: 2;
+      }
+}
