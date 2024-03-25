@@ -9,6 +9,7 @@ import {
   Col,
   Container,
   Row,
+  Spinner,
 } from "reactstrap";
 import { HomeCardList } from "../data_files/HomeCardList";
 // Import Swiper React components
@@ -32,12 +33,11 @@ var isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
 dayjs.extend(isSameOrBefore);
 
 function Home({ navbar, searchData }) {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const {properties} = useSelector((state) => state.allProperties)
+  const { properties, isLoading } = useSelector((state) => state.allProperties);
 
-  console.log(properties,'properties')
+  console.log(properties, "properties");
 
   const [HomeCards] = useState(HomeCardList);
   const [numberOfCardShow, setNumberOfCardsShow] = useState(8);
@@ -51,75 +51,81 @@ function Home({ navbar, searchData }) {
     }
   };
 
-  const itemsToShow = useMemo(() => {
-    if (searchData) {
-      const isOnlyCountry = searchData.startSelectedDate?.length === 0;
+  // const itemsToShow = useMemo(() => {
+  //   if (searchData) {
+  //     const isOnlyCountry = searchData.startSelectedDate?.length === 0;
 
-      const selectedStartDate = dayjs(searchData.startSelectedDate, {
-        format: "MM/DD/YYYY",
-      });
-      const selectedEndDate = dayjs(searchData.endSelectedDate, {
-        format: "MM/DD/YYYY",
-      });
+  //     const selectedStartDate = dayjs(searchData.startSelectedDate, {
+  //       format: "MM/DD/YYYY",
+  //     });
+  //     const selectedEndDate = dayjs(searchData.endSelectedDate, {
+  //       format: "MM/DD/YYYY",
+  //     });
 
-      const filteredByCountry = HomeCards.filter(
-        (item) =>
-          item.PlaceName.split(", ")[1]?.toLowerCase() === searchData.inputvalue
-      );
+  //     const filteredByCountry = HomeCards.filter(
+  //       (item) =>
+  //         item.PlaceName.split(", ")[1]?.toLowerCase() === searchData.inputvalue
+  //     );
 
-      const filteredByDateRange = HomeCards.filter((item) => {
-        const CardDateStart = dayjs(item.startDate, { format: "MM/DD/YYYY" });
-        const CardDateEnd = dayjs(item.endDate, { format: "MM/DD/YYYY" });
-        return (
-          CardDateStart >= selectedStartDate && CardDateEnd <= selectedEndDate
-        );
-      });
+  //     const filteredByDateRange = HomeCards.filter((item) => {
+  //       const CardDateStart = dayjs(item.startDate, { format: "MM/DD/YYYY" });
+  //       const CardDateEnd = dayjs(item.endDate, { format: "MM/DD/YYYY" });
+  //       return (
+  //         CardDateStart >= selectedStartDate && CardDateEnd <= selectedEndDate
+  //       );
+  //     });
 
-      let finalFilteredResults = [];
+  //     let finalFilteredResults = [];
 
-      if (
-        !isOnlyCountry &&
-        searchData.inputvalue &&
-        searchData.startSelectedDate &&
-        searchData.endSelectedDate
-      ) {
-        finalFilteredResults = filteredByCountry.filter((item) => {
-          return (
-            filteredByDateRange.includes(item) &&
-            item.PlaceName.split(", ")[1]?.toLowerCase() ===
-              searchData.inputvalue
-          );
-        });
-      } else if (
-        !isOnlyCountry &&
-        searchData.startSelectedDate &&
-        searchData.endSelectedDate
-      ) {
-        finalFilteredResults = filteredByDateRange;
-      } else {
-        finalFilteredResults = filteredByCountry;
-      }
+  //     if (
+  //       !isOnlyCountry &&
+  //       searchData.inputvalue &&
+  //       searchData.startSelectedDate &&
+  //       searchData.endSelectedDate
+  //     ) {
+  //       finalFilteredResults = filteredByCountry.filter((item) => {
+  //         return (
+  //           filteredByDateRange.includes(item) &&
+  //           item.PlaceName.split(", ")[1]?.toLowerCase() ===
+  //             searchData.inputvalue
+  //         );
+  //       });
+  //     } else if (
+  //       !isOnlyCountry &&
+  //       searchData.startSelectedDate &&
+  //       searchData.endSelectedDate
+  //     ) {
+  //       finalFilteredResults = filteredByDateRange;
+  //     } else {
+  //       finalFilteredResults = filteredByCountry;
+  //     }
 
-      return finalFilteredResults.slice(0, numberOfCardShow);
-    } else {
-      return HomeCards.slice(0, numberOfCardShow);
-    }
-  }, [HomeCards, numberOfCardShow, searchData]);
+  //     return finalFilteredResults.slice(0, numberOfCardShow);
+  //   } else {
+  //     return HomeCards.slice(0, numberOfCardShow);
+  //   }
+  // }, [HomeCards, numberOfCardShow, searchData]);
 
-  console.log(itemsToShow,'itemsToShow')
+  // console.log(itemsToShow, "itemsToShow");
 
-  useEffect(()=>{
-dispatch(getProperties())
-  },[])
+  useEffect(() => {
+    dispatch(getProperties());
+  }, []);
 
   return (
     <>
       <div className={`${navbar ? "" : "custom-bg-Home"}`}>
         <Container className="bg-white py-4" fluid>
           <Row className="mx-md-3 mx-1">
-            {properties?.map((item, index) => {
-              return <PropertyCard item={item} index={index} />;
-            })}
+            {isLoading ? (
+              <div className="d-flex justify-content-center align-items-center mt-5">
+                <Spinner />
+              </div>
+            ) : (
+              properties?.map((item, index) => (
+                <PropertyCard key={index} item={item} index={index} />
+              ))
+            )}
           </Row>
 
           <Row className="d-flex justify-content-center align-items-center mx-0 my-4 text-center w-100">

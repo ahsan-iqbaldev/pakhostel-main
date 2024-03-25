@@ -17,7 +17,7 @@ function App() {
       {/* <CardSubPage /> */}
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='cardSubPage' element={<CardSubPage />} />
+      <Route path='cardSubPage/:id' element={<CardSubPage />} />
       {/* <Route path='*' element={<PageNotFound />} /> */}
     </Routes>
       <Footer />
