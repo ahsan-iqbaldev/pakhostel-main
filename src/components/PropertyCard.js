@@ -60,23 +60,9 @@ const PropertyCard = ({ item, index }) => {
             </CardSubtitle>
             <a className="">
               <span className="text-dark fcs-600">
-                {item?.priceDetails?.roomType === "true" ? (
-                  <>
-                    {item?.priceDetails?.bedrooms &&
-                      item?.priceDetails?.bedrooms.map((e, index) => (
-                        <span key={index}>
-                          {index > 0 && ","}
-                          <span className="font-bold">${e.price}</span>
-                        </span>
-                      ))}
-                  </>
-                ) : (
-                  <>
-                    <span className="font-bold">
-                      ${item?.priceDetails?.pricePerNight}
-                    </span>
-                  </>
-                )}
+                <span className="font-bold">
+                  ${item?.priceDetails?.pricePerNight}
+                </span>
               </span>
               <span className="mx-1 text-dark">
                 {" "}

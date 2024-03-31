@@ -50,7 +50,6 @@ function CardSubPage() {
                 </span>{" "}
                 .
                 <a href="#" className="text-dark">
-                  <span className="mx-1 fcbs-7 f-sbt-style">3 reviews</span> .{" "}
                   <span className="fcbs-7 f-sbt-style mx-1">
                     {singleProperty?.selectedCity},{" "}
                     {singleProperty?.selectedState}
@@ -133,11 +132,20 @@ function CardSubPage() {
                 </h4>
                 <div className="d-flex justify-content-start">
                   <div className="text-truncate me-2">
-                    <span className="fsw-4">16+ guests</span> .
+                    <span className="fsw-4">
+                      {singleProperty?.priceDetails?.maxGuests} guests
+                    </span>{" "}
+                    .
                     <a href="#" className="text-dark">
-                      <span className="mx-1 fsw-4">4 bedrooms</span> .
-                      <span className="fsw-4 mx-1">6 beds </span> .
-                      <span className="fsw-4 mx-1">2 shared baths </span>
+                      <span className="mx-1 fsw-4">
+                        {singleProperty?.priceDetails?.bedrooms?.length}{" "}
+                        bedrooms
+                      </span>{" "}
+                      .
+                      <span className="fsw-4 mx-1">
+                        {singleProperty?.priceDetails?.bedrooms?.length} beds{" "}
+                      </span>{" "}
+                      .<span className="fsw-4 mx-1">2 shared baths </span>
                     </a>
                   </div>
                 </div>
@@ -242,11 +250,18 @@ function CardSubPage() {
                         <img
                           src={item.image}
                           alt=""
-                          style={{ width: "50px", height: "50px", borderRadius: "10px" }}
+                          style={{
+                            width: "50px",
+                            height: "50px",
+                            borderRadius: "10px",
+                          }}
                         />
                       </Col>
-                      <Col md={10} style={{display:"flex", alignItems:"center"}}>
-                        <p className="mb-0" >{item?.name}</p>
+                      <Col
+                        md={10}
+                        style={{ display: "flex", alignItems: "center" }}
+                      >
+                        <p className="mb-0">{item?.name}</p>
                       </Col>
                     </Row>
                   </Col>

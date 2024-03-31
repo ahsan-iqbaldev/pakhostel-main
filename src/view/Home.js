@@ -13,7 +13,6 @@ import {
 } from "reactstrap";
 import { HomeCardList } from "../data_files/HomeCardList";
 // Import Swiper React components
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -127,7 +126,6 @@ function Home({ navbar, searchData }) {
               ))
             )}
           </Row>
-
           <Row className="d-flex justify-content-center align-items-center mx-0 my-4 text-center w-100">
             <Col className="px-2">
               <p className="text-dark h5 text-wrap">

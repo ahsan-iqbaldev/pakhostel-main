@@ -67,9 +67,8 @@ export const getSingleProperties = (id) => {
 };
 
 export const setIsLoading = (val) => async (dispatch) => {
-    dispatch({
-      type: "SET_IS_LOADING",
-      payload: val,
-    });
-  };
-  
+  dispatch({
+    type: "SET_IS_LOADING",
+    payload: val,
+  });
+};
